@@ -1,3 +1,10 @@
+import Footer from "../components/footer";
+
 export default function Home() {
-  return <div>homepage</div>;
+  return (
+    <div>
+      homepage
+      <Footer />
+    </div>
+  );
 }
