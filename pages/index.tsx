@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div>
       <Button>Shop Little Kids</Button>
+      <Button variant="fill">Shop Big Kids</Button>
       <Caroussel_card
         image="yes"
         name="Cold Weather Run"

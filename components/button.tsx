@@ -15,8 +15,8 @@ const Button = forwardRef<HTMLButtonElement, IButton>(function Button(
       ref={ref}
       className={`${className ?? ""}${
         variant === "fill"
-          ? " bg-black text-white"
-          : " border-4 border-black bg-black text-white font-bold"
+          ? "border-2 border-black bg-white text-black font-bold hover:bg-black hover:text-white"
+          : "border-2 border-black bg-black text-white font-bold hover:bg-white hover:text-black"
       } py-2 px-4`}
       {...rest}
     >
