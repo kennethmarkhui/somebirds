@@ -5,6 +5,17 @@ import {
   FaPinterestP,
 } from "react-icons/fa";
 
+import flag_au from "../public/svg_icons/flag-au.svg";
+import flag_ca from "../public/svg_icons/flag-ca.svg";
+import flag_cn from "../public/svg_icons/flag-cn.svg";
+import flag_nz from "../public/svg_icons/flag-nz.svg";
+import flag_uk from "../public/svg_icons/flag-uk.svg";
+import flag_us from "../public/svg_icons/flag-us.svg";
+import flag_jp from "../public/svg_icons/Japan-Flag.svg";
+import flag_kr from "../public/svg_icons/South-Korea-Flag.svg";
+
+import Image from "next/image";
+
 const help_array = [
   "1-888-963-8944",
   "1-888-963-8944(text)",
@@ -81,8 +92,17 @@ const Footer = () => {
               <FaPinterestP size={"2rem"} className="mx-2" />
             </div>
           </div>
-          <div className="basis-1/3 flex justify-center">Certified</div>
-          <div className="basis-1/3">Flags</div>
+          <div className="basis-1/3 flex ">Certified</div>
+          <div className="basis-1/3 flex">
+            <Image src={flag_ca} alt="au" className="mx-2" />
+            <Image src={flag_ca} alt="ca" className="mx-2" />
+            <Image src={flag_ca} alt="cn" className="mx-2" />
+            <Image src={flag_uk} alt="nz" className="mx-2" />
+            <Image src={flag_uk} alt="uk" className="mx-2" />
+            <Image src={flag_uk} alt="us" className="mx-2" />
+            <Image src={flag_uk} alt="jp" className="mx-2" />
+            <Image src={flag_uk} alt="kr" className="mx-2" />
+          </div>
         </div>
         <div className="flex place-content-center py-8">
           2022 SOMEBIRDS, Inc. All Rights Reserved.
