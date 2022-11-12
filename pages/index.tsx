@@ -42,9 +42,10 @@ export default function Home({
       {products.map((product) => (
         <div key={product.id}>
           <ShopifyImage
-            data={data.products.nodes[0].variants.nodes[0].image || {}}
+            data={product.variants.nodes[0].image ?? {}}
             width={250}
             loading="eager"
+            className="h-80"
           />
           <span>{product.title}</span>
         </div>
