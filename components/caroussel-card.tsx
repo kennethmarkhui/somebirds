@@ -6,9 +6,9 @@ interface ICard {
 
 const Caroussel_card = ({ image, name, description }: ICard): JSX.Element => {
   return (
-    <div className="w-full h-96 rounded-lg shadow-md bg-slate-50 lg:max-w-sm">
+    <div className="w-full h-[32rem] rounded-lg shadow-md bg-slate-50 lg:max-w-sm">
       <img
-        className="object-cover w-full h-48"
+        className="object-cover w-full h-80"
         src="https://cdn.pixabay.com/photo/2022/08/18/09/20/houses-7394390__340.jpg"
         alt="image"
       />
