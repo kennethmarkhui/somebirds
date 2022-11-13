@@ -6,16 +6,9 @@ import {
   FaPinterestP,
 } from "react-icons/fa";
 
-import flag_au from "../public/svg_icons/flag-au.svg";
-import flag_ca from "../public/svg_icons/flag-ca.svg";
-import flag_cn from "../public/svg_icons/flag-cn.svg";
-import flag_nz from "../public/svg_icons/flag-nz.svg";
-import flag_uk from "../public/svg_icons/flag-uk.svg";
-import flag_us from "../public/svg_icons/flag-us.svg";
-import flag_jp from "../public/svg_icons/Japan-Flag.svg";
-import flag_kr from "../public/svg_icons/South-Korea-Flag.svg";
+const locales = ["au", "ca", "cn", "nz", "uk", "us", "jp", "kr"];
 
-const help_array = [
+const helpLinks = [
   "1-888-963-8944",
   "1-888-963-8944(text)",
   "help@somebirds.com",
@@ -24,7 +17,7 @@ const help_array = [
   "Afterpay",
 ];
 
-const shop_array = [
+const shopLinks = [
   "Men's Shoes",
   "Women's Shoes",
   "Men's Apparel",
@@ -35,7 +28,7 @@ const shop_array = [
   "Download The Somebirds App",
 ];
 
-const company_array = [
+const companyLinks = [
   "Our Stores",
   "Our Story",
   "Our Materials",
@@ -58,7 +51,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row text-center lg:text-left gap-4">
           <div className="basis-1/4">
             <h3 className="py-2 font-bold">HELP</h3>
-            {help_array.map((item, index) => (
+            {helpLinks.map((item, index) => (
               <p key={index} className="text-xs mb-2">
                 {item}
               </p>
@@ -66,7 +59,7 @@ const Footer = () => {
           </div>
           <div className="basis-1/4">
             <h3 className="py-2 font-bold">SHOP</h3>
-            {shop_array.map((item, index) => (
+            {shopLinks.map((item, index) => (
               <p key={index} className="text-xs mb-2">
                 {item}
               </p>
@@ -75,7 +68,7 @@ const Footer = () => {
 
           <div className="basis-2/4">
             <h3 className="py-2 font-bold">COMPANY</h3>
-            {company_array.map((item, index) => (
+            {companyLinks.map((item, index) => (
               <p key={index} className="text-xs mb-2">
                 {item}
               </p>
@@ -99,15 +92,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="basis-1/4 text-center">Certified</div>
-          <div className="basis-2/4 flex gap-4">
-            <Image src={flag_ca} alt="au" />
-            <Image src={flag_ca} alt="ca" />
-            <Image src={flag_ca} alt="cn" />
-            <Image src={flag_uk} alt="nz" />
-            <Image src={flag_uk} alt="uk" />
-            <Image src={flag_uk} alt="us" />
-            <Image src={flag_uk} alt="jp" />
-            <Image src={flag_uk} alt="kr" />
+          <div className="basis-2/4">
+            <ul className="flex gap-4">
+              {locales.map((locale) => (
+                <li key={locale}>
+                  <Image
+                    src={`/icons/flag-${locale}.svg`}
+                    alt={locale}
+                    width={40}
+                    height={25}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
