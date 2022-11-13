@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaFacebook,
   FaInstagram,
@@ -13,8 +14,6 @@ import flag_uk from "../public/svg_icons/flag-uk.svg";
 import flag_us from "../public/svg_icons/flag-us.svg";
 import flag_jp from "../public/svg_icons/Japan-Flag.svg";
 import flag_kr from "../public/svg_icons/South-Korea-Flag.svg";
-
-import Image from "next/image";
 
 const help_array = [
   "1-888-963-8944",
@@ -54,62 +53,70 @@ const company_array = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#212a2f] text-white py-16 ">
-      <div className="max-w-[60%] mx-auto">
-        <div className="flex flex-row gap-4 m-4">
-          <div className="basis-1/3">
-            <div className="py-2 font-bold">HELP</div>
+    <footer className="bg-[#212a2f] text-white py-16 px-6">
+      <div className="max-w-screen-xl mx-auto space-y-8">
+        <div className="flex flex-col lg:flex-row text-center lg:text-left gap-4">
+          <div className="basis-1/4">
+            <h3 className="py-2 font-bold">HELP</h3>
             {help_array.map((item, index) => (
-              <div key={index}>{item}</div>
+              <p key={index} className="text-xs mb-2">
+                {item}
+              </p>
             ))}
           </div>
-          <div className="basis-1/3">
-            <div className="py-2 font-bold">SHOP</div>
+          <div className="basis-1/4">
+            <h3 className="py-2 font-bold">SHOP</h3>
             {shop_array.map((item, index) => (
-              <div key={index}>{item}</div>
+              <p key={index} className="text-xs mb-2">
+                {item}
+              </p>
             ))}
           </div>
 
-          <div className="basis-1/3">
-            <div className="py-2 font-bold">COMPANY</div>
+          <div className="basis-2/4">
+            <h3 className="py-2 font-bold">COMPANY</h3>
             {company_array.map((item, index) => (
-              <div key={index}>{item}</div>
+              <p key={index} className="text-xs mb-2">
+                {item}
+              </p>
             ))}
           </div>
         </div>
-        <div className="flex flex-row gap-4 m-4">
-          <div className="basis-1/3">
-            <div className="py-4 font-bold">FOLLOW THE FLOCK</div>
-            <div className="py-4 max-w-xs">
+
+        <div className="flex flex-col lg:flex-row text-center lg:text-left items-center gap-8">
+          <div className="basis-1/4">
+            <h3 className="mb-4 font-bold">FOLLOW THE FLOCK</h3>
+            <p className="mb-4 text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
               ipsa! Tempore laboriosam obcaecati aliquam deserunt repellendus
               itaque maxime facilis nam.
-            </div>
-            <div className="flex">
-              <FaInstagram size={"2rem"} className="mr-2" />
-              <FaTwitter size={"2rem"} className="mx-2" />
-              <FaFacebook size={"2rem"} className="mx-2" />
-              <FaPinterestP size={"2rem"} className="mx-2" />
+            </p>
+            <div className="flex gap-4 lg:justify-start justify-center">
+              <FaInstagram size={"1rem"} />
+              <FaTwitter size={"1rem"} />
+              <FaFacebook size={"1rem"} />
+              <FaPinterestP size={"1rem"} />
             </div>
           </div>
-          <div className="basis-1/3 flex ">Certified</div>
-          <div className="basis-1/3 flex">
-            <Image src={flag_ca} alt="au" className="mx-2" />
-            <Image src={flag_ca} alt="ca" className="mx-2" />
-            <Image src={flag_ca} alt="cn" className="mx-2" />
-            <Image src={flag_uk} alt="nz" className="mx-2" />
-            <Image src={flag_uk} alt="uk" className="mx-2" />
-            <Image src={flag_uk} alt="us" className="mx-2" />
-            <Image src={flag_uk} alt="jp" className="mx-2" />
-            <Image src={flag_uk} alt="kr" className="mx-2" />
+          <div className="basis-1/4 text-center">Certified</div>
+          <div className="basis-2/4 flex gap-4">
+            <Image src={flag_ca} alt="au" />
+            <Image src={flag_ca} alt="ca" />
+            <Image src={flag_ca} alt="cn" />
+            <Image src={flag_uk} alt="nz" />
+            <Image src={flag_uk} alt="uk" />
+            <Image src={flag_uk} alt="us" />
+            <Image src={flag_uk} alt="jp" />
+            <Image src={flag_uk} alt="kr" />
           </div>
         </div>
-        <div className="flex place-content-center py-8">
+
+        <p className="text-center text-xs py-8">
           2022 SOMEBIRDS, Inc. All Rights Reserved.
           <span className="underline px-1">Terms,</span>
           <span className="underline px-1">Privacy</span> &
           <span className="underline px-1">Accesibility</span>
-        </div>
+        </p>
       </div>
     </footer>
   );
