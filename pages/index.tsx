@@ -5,7 +5,6 @@ import {
 } from "@shopify/hydrogen-react";
 import { request as graphqlRequest } from "graphql-request";
 
-import Footer from "../components/footer";
 import Caroussel_card from "../components/caroussel-card";
 import Button from "../components/button";
 import Hero from "../components/Hero";
@@ -26,7 +25,7 @@ export default function Home({
   const collections = data.collections.nodes.map((collection) => collection);
   const products = data.products.nodes.map((product) => product);
   return (
-    <div>
+    <>
       <Hero />
       <Button>Shop Little Kids</Button>
       <Button variant="fill">Shop Big Kids</Button>
@@ -50,8 +49,7 @@ export default function Home({
           <span>{product.title}</span>
         </div>
       ))}
-      <Footer />
-    </div>
+    </>
   );
 }
 
