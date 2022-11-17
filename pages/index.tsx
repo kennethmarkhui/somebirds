@@ -9,7 +9,7 @@ import Caroussel_card from "../components/caroussel-card";
 import Button from "../components/button";
 import Hero from "../components/Hero";
 import Form from "../components/form";
-import Category_Carousel from "../components/category-carousel";
+import Tabs from "../components/Tabs";
 import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
 import { shopifyClient } from "../lib/shopify";
@@ -30,14 +30,7 @@ export default function Home({
       <Hero />
       <Button>Shop Little Kids</Button>
       <Button variant="fill">Shop Big Kids</Button>
-      <Category_Carousel></Category_Carousel>
-      {/*
-       <Caroussel_card
-        image="yes"
-        name="Cold Weather Run"
-        description="water-repellant running shoes so you can clock miles rain or shine or both"
-      />
-      */}
+      <Tabs />
       <Form />
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>
