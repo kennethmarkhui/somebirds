@@ -9,11 +9,33 @@ import Caroussel_card from "../components/caroussel-card";
 import Button from "../components/button";
 import Hero from "../components/Hero";
 import Form from "../components/form";
-import Promo_Hero from "../components/promo-hero";
+import Promo_Hero, { IPromoHero } from "../components/promo-hero";
 import Tabs from "../components/Tabs";
 import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
 import { shopifyClient } from "../lib/shopify";
+
+const homePromoHeroContent: IPromoHero = {
+  image: "bench_itzy.jpg",
+  width: "4096",
+  height: "768",
+  title: "Jingle All The Way In Any Weather",
+  subtitle:
+    "The weather-repellent Mizzle Collection is ready to keep you cozy.",
+  button1: "SHOP MEN",
+  button2: "SHOP WOMEN",
+};
+
+const homeSecondPromoHeroContent: IPromoHero = {
+  image: "kda_ahri.jpg",
+  width: "4096",
+  height: "768",
+  title: "Stay Miles Ahead of the Holiday Hustle",
+  subtitle:
+    "Dash through your holiday gift list with running shoes designed to keep them - and you - moving.",
+  button1: "SHOP MEN",
+  button2: "SHOP WOMEN",
+};
 
 export default function Home({
   data,
@@ -32,7 +54,25 @@ export default function Home({
       <Button>Shop Little Kids</Button>
       <Button variant="fill">Shop Big Kids</Button>
       <Tabs />
-      <Promo_Hero></Promo_Hero>
+      <Promo_Hero
+        image={homePromoHeroContent.image}
+        width={homePromoHeroContent.width}
+        height={homePromoHeroContent.height}
+        title={homePromoHeroContent.title}
+        subtitle={homePromoHeroContent.subtitle}
+        button1={homePromoHeroContent.button1}
+        button2={homePromoHeroContent.button2}
+      ></Promo_Hero>
+
+      <Promo_Hero
+        image={homeSecondPromoHeroContent.image}
+        width={homeSecondPromoHeroContent.width}
+        height={homeSecondPromoHeroContent.height}
+        title={homeSecondPromoHeroContent.title}
+        subtitle={homeSecondPromoHeroContent.subtitle}
+        button1={homeSecondPromoHeroContent.button1}
+        button2={homeSecondPromoHeroContent.button2}
+      ></Promo_Hero>
       <Form />
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>
