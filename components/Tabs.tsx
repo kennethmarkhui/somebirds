@@ -19,7 +19,7 @@ const tabItems = [
     description: "Cozy Slipper",
   },
   {
-    idx: 2,
+    idx: 0,
     image: "yes",
     name: "Wool Runner",
     description: "Cozy Sneaker",
@@ -27,8 +27,38 @@ const tabItems = [
   {
     idx: 1,
     image: "yes",
-    name: "stone",
-    description: "magic Sneaker",
+    name: "Tree Dasher 2",
+    description: "Comfy, Breezy, Everyday Runs",
+  },
+  {
+    idx: 1,
+    image: "yes",
+    name: "Tree Flyer",
+    description: "Light, Bouncy, Long Distance Runs",
+  },
+  {
+    idx: 1,
+    image: "yes",
+    name: "Trail Runner SWT",
+    description: "Durable, Grippy, Off Road Terrain",
+  },
+  {
+    idx: 2,
+    image: "yes",
+    name: "Fluff Apparel",
+    description: "Soft-To-The-Touch Apparel",
+  },
+  {
+    idx: 2,
+    image: "yes",
+    name: "R & R Sweatpant",
+    description: "Soft-Yet-Structured Sweats",
+  },
+  {
+    idx: 2,
+    image: "yes",
+    name: "Wool Lounger Fluff",
+    description: "Cozy Feel, Fluffy Material",
   },
 ];
 

@@ -9,6 +9,7 @@ import Caroussel_card from "../components/caroussel-card";
 import Button from "../components/button";
 import Hero from "../components/Hero";
 import Form from "../components/form";
+import Promo_Hero from "../components/promo-hero";
 import Tabs from "../components/Tabs";
 import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
@@ -31,6 +32,7 @@ export default function Home({
       <Button>Shop Little Kids</Button>
       <Button variant="fill">Shop Big Kids</Button>
       <Tabs />
+      <Promo_Hero></Promo_Hero>
       <Form />
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>
