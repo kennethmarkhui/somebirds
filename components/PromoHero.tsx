@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Button from "./button";
+import Button from "./Button";
 
 export interface IPromoHero {
   image: string;
@@ -34,7 +34,9 @@ const Promo_Hero = ({
         <div className="p-4 flex justify-center font-bold text-4xl">
           {title}
         </div>
-        <div className="p-4 flex justify-center text-xl">{subtitle}</div>
+        <div className="p-4 flex justify-center text-xl text-center w-[48rem]">
+          {subtitle}
+        </div>
         <div className="flex gap-10 p-4 justify-center">
           <Button>{button1}</Button>
           <Button>{button2}</Button>

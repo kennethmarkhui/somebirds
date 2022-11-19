@@ -5,11 +5,11 @@ import {
 } from "@shopify/hydrogen-react";
 import { request as graphqlRequest } from "graphql-request";
 
-import Caroussel_card from "../components/caroussel-card";
-import Button from "../components/button";
+import CarouselComponent from "../components/CarouselComponent";
+import Button from "../components/Button";
 import Hero from "../components/Hero";
-import Form from "../components/form";
-import Promo_Hero, { IPromoHero } from "../components/promo-hero";
+import Form from "../components/Form";
+import PromoHero, { IPromoHero } from "../components/PromoHero";
 import Tabs from "../components/Tabs";
 import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
@@ -37,6 +37,17 @@ const homeSecondPromoHeroContent: IPromoHero = {
   button2: "SHOP WOMEN",
 };
 
+const homeThirdPromoHeroContent: IPromoHero = {
+  image: "kda_ahri.jpg",
+  width: "4096",
+  height: "768",
+  title: "Can Sustainable Shoes Save The Planet?",
+  subtitle:
+    "We think it's a good place to start. Explore our approach to sustainable footwear, sustainable apparel and reducing our enviornmental impact. Check out our progress so far, and our bold list of commitments for 2025.",
+  button1: "OUR SUSTAINABLE PRACTICES",
+  button2: "SHOP WOMEN",
+};
+
 export default function Home({
   data,
   errors,
@@ -54,7 +65,7 @@ export default function Home({
       <Button>Shop Little Kids</Button>
       <Button variant="fill">Shop Big Kids</Button>
       <Tabs />
-      <Promo_Hero
+      <PromoHero
         image={homePromoHeroContent.image}
         width={homePromoHeroContent.width}
         height={homePromoHeroContent.height}
@@ -62,9 +73,9 @@ export default function Home({
         subtitle={homePromoHeroContent.subtitle}
         button1={homePromoHeroContent.button1}
         button2={homePromoHeroContent.button2}
-      ></Promo_Hero>
-
-      <Promo_Hero
+      />
+      <CarouselComponent title="New Arrivals" />
+      <PromoHero
         image={homeSecondPromoHeroContent.image}
         width={homeSecondPromoHeroContent.width}
         height={homeSecondPromoHeroContent.height}
@@ -72,7 +83,18 @@ export default function Home({
         subtitle={homeSecondPromoHeroContent.subtitle}
         button1={homeSecondPromoHeroContent.button1}
         button2={homeSecondPromoHeroContent.button2}
-      ></Promo_Hero>
+      />
+      <CarouselComponent title="Shop The Collections" />
+      <PromoHero
+        image={homeThirdPromoHeroContent.image}
+        width={homeThirdPromoHeroContent.width}
+        height={homeThirdPromoHeroContent.height}
+        title={homeThirdPromoHeroContent.title}
+        subtitle={homeThirdPromoHeroContent.subtitle}
+        button1={homeThirdPromoHeroContent.button1}
+        button2={homeThirdPromoHeroContent.button2}
+      />
+      <CarouselComponent title="Stories" />
       <Form />
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>

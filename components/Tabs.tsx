@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Button from "./button";
-import Caroussel_card from "./caroussel-card";
+import Button from "./Button";
+import Caroussel_card from "./CarousselCard";
 
 const tabList = ["For Everyday", "For Running", "For Lounging"];
 
