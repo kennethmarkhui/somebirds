@@ -1,7 +1,5 @@
-import CarousselCard, { ICard } from "./CarousselCard";
+import CarouselCard, { ICard } from "./CarouselCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 const carouselContent: ICard[] = [
@@ -77,11 +75,11 @@ const CarouselComponent = ({ title }: ICarouselCompnent) => {
       >
         {carouselContent.map((item, index) => (
           <SwiperSlide key={`${item.name}-${index}`}>
-            <CarousselCard
+            <CarouselCard
               image={item.image}
               name={item.name}
               description={item.description}
-            ></CarousselCard>
+            />
           </SwiperSlide>
         ))}
       </Swiper>

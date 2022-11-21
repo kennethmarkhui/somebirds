@@ -9,7 +9,6 @@ import CarouselComponent from "../components/CarouselComponent";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import SignUpModule from "../components/SignUpModule";
-import Form from "../components/Form";
 import PromoHero, { IPromoHero } from "../components/PromoHero";
 import Tabs from "../components/Tabs";
 import { graphql } from "../gql/gql";
