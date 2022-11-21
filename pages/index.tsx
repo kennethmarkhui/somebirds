@@ -8,6 +8,7 @@ import { request as graphqlRequest } from "graphql-request";
 import CarouselComponent from "../components/CarouselComponent";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
+import SignUpModule from "../components/SignUpModule";
 import Form from "../components/Form";
 import PromoHero, { IPromoHero } from "../components/PromoHero";
 import Tabs from "../components/Tabs";
@@ -95,7 +96,7 @@ export default function Home({
         button2={homeThirdPromoHeroContent.button2}
       />
       <CarouselComponent title="Stories" />
-      <Form />
+
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>
       ))}
@@ -110,6 +111,7 @@ export default function Home({
           <span>{product.title}</span>
         </div>
       ))}
+      <SignUpModule />
     </>
   );
 }
