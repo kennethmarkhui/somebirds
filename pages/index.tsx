@@ -15,8 +15,6 @@ import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
 import { shopifyClient } from "../lib/shopify";
 
-import HeaderDropdown from "../components/HeaderDropdown";
-
 const homePromoHeroContent: IPromoHero = {
   image: "bench_itzy.jpg",
   width: "4096",
@@ -111,7 +109,6 @@ export default function Home({
         </div>
       ))}
       <SignUpModule />
-      <HeaderDropdown />
     </>
   );
 }
