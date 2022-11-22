@@ -1,25 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Swiper as ISwiper } from "swiper";
+
 import Button from "./Button";
 
-const tabList = ["For Everyday", "For Running", "For Lounging"];
-
-interface ITabItem {
+interface ITab {
   idx: number;
   image: string;
   name: string;
   description: string;
 }
 
-interface TabItemProps {
-  item: ITabItem;
+interface TabCardProps {
+  item: ITab;
   overlay?: boolean;
 }
 
-const tabItems: ITabItem[] = [
+const tabList = ["For Everyday", "For Running", "For Lounging"];
+
+const tabItems: ITab[] = [
   {
     idx: 0,
     image: "yes",
@@ -76,13 +76,24 @@ const tabItems: ITabItem[] = [
   },
 ];
 
+const SWIPER_DEFAULT_SLIDES_PER_VIEW = 1;
+const SWIPER_SMALL_SLIDES_PER_VIEW = 2;
+const NUMBER_OF_TABS = tabList.length; // should be 3
+
 const Tabs = (): JSX.Element => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const swiperRef = useRef<ISwiper | undefined>();
 
   useEffect(() => {
     if (!swiperRef.current) return;
-    swiperRef.current.slideTo(selectedIndex * 3);
+    if (
+      Math.abs(
+        swiperRef.current.activeIndex - swiperRef.current.previousIndex
+      ) === 1 &&
+      swiperRef.current.activeIndex < swiperRef.current.previousIndex
+    )
+      return;
+    swiperRef.current.slideTo(selectedIndex * NUMBER_OF_TABS);
   }, [swiperRef, selectedIndex]);
 
   return (
@@ -119,7 +130,7 @@ const Tabs = (): JSX.Element => {
           {tabItems.map(
             (tabItem, index) =>
               selectedIndex === tabItem.idx && (
-                <TabItem
+                <TabCard
                   key={`${tabItem.name}-${index}`}
                   item={tabItem}
                   overlay
@@ -129,15 +140,26 @@ const Tabs = (): JSX.Element => {
         </div>
         {/* MOBILE */}
         <Swiper
-          slidesPerView={1}
+          slidesPerView={SWIPER_DEFAULT_SLIDES_PER_VIEW}
           spaceBetween={15}
           breakpoints={{
             480: {
-              slidesPerView: 2,
+              slidesPerView: SWIPER_SMALL_SLIDES_PER_VIEW,
             },
           }}
           navigation={true}
           modules={[Navigation]}
+          onSlideChange={(swiper) => {
+            setSelectedIndex(
+              Math.ceil(
+                (swiper.activeIndex +
+                  (swiper.currentBreakpoint === "max"
+                    ? SWIPER_DEFAULT_SLIDES_PER_VIEW
+                    : SWIPER_SMALL_SLIDES_PER_VIEW)) /
+                  NUMBER_OF_TABS
+              ) - 1
+            );
+          }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -145,7 +167,7 @@ const Tabs = (): JSX.Element => {
         >
           {tabItems.map((tabItem, index) => (
             <SwiperSlide className="h-auto" key={`${tabItem.name}-${index}`}>
-              <TabItem key={`${tabItem.name}-${index}`} item={tabItem} />
+              <TabCard key={`${tabItem.name}-${index}`} item={tabItem} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -156,10 +178,10 @@ const Tabs = (): JSX.Element => {
 
 export default Tabs;
 
-const TabItem = ({
+const TabCard = ({
   item: { name, description, image, idx },
   overlay,
-}: TabItemProps) => {
+}: TabCardProps) => {
   return (
     <div className="group flex flex-col w-full h-full shadow">
       <div className="w-full relative">
