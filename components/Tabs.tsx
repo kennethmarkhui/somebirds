@@ -92,7 +92,7 @@ const Tabs = (): JSX.Element => {
 
       <div className="max-w-screen-xl mx-auto space-y-8 px-4">
         {/* TAB LIST */}
-        <div className="flex justify-around border-b-2">
+        <div className="flex justify-around border-b-2 text-2xl">
           {tabList.map((tab, index) => (
             <button
               key={`${tab}-${index}`}

@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         beige: "#f8f7f5",
       },
+      backgroundImage: {
+        "hero-pattern": "url('/hero_pattern.png')",
+      },
     },
   },
   plugins: [],

@@ -17,7 +17,7 @@ const Header = () => {
       <ul className="hidden md:flex gap-4">
         {navLinks.map((navLink) => (
           <li key={navLink}>
-            <Link href="/" className="hover:underline">
+            <Link href="/" className="hover:underline font-semibold">
               {navLink}
             </Link>
           </li>

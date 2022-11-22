@@ -64,8 +64,6 @@ export default function Home({
   return (
     <>
       <Hero />
-      <Button>Shop Little Kids</Button>
-      <Button variant="fill">Shop Big Kids</Button>
       <Tabs />
       <PromoHero
         image={homePromoHeroContent.image}

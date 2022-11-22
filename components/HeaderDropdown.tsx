@@ -1,3 +1,4 @@
+import Button from "./Button";
 const Shoes = [
   "Everyday Sneakers",
   "Running Shoes",
@@ -67,7 +68,10 @@ const HeaderDropdown = () => {
           </div>
           <div className="basis-2/5">
             <h3 className="py-4 font-bold text-xl ">FEATURED</h3>
-            <div>yes</div>
+            <div className="flex flex-col gap-4">
+              <Button variant="image">THE FLUFF COLLECTION</Button>
+              <Button variant="image">MENS SALE</Button>
+            </div>
           </div>
         </div>
       </div>
