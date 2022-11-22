@@ -12,17 +12,6 @@ import ButtonImage from "./ButtonImage";
 
 const navLinks = ["men", "women", "kids"];
 
-interface INavItem {
-  idx: number;
-  name: string;
-}
-const NavItems: INavItem[] = [
-  {
-    idx: 0,
-    name: "Fluff Collector",
-  },
-];
-
 const Shoes = [
   "Everyday Sneakers",
   "Running Shoes",
@@ -69,7 +58,11 @@ const Header = () => {
       {/* TABLIST */}
       <ul className="hidden md:flex gap-4">
         {navLinks.map((navLink) => (
-          <li key={navLink} onClick={openDrawer} className="cursor-pointer">
+          <li
+            key={navLink}
+            onClick={openDrawer}
+            className="cursor-pointer hover:underline"
+          >
             {navLink}
           </li>
         ))}
@@ -91,8 +84,8 @@ const Header = () => {
         <HiOutlineShoppingCart size="2em" className="cursor-pointer" />
       </div>
       <Drawer isOpen={isOpen} onClose={closeDrawer}>
-        <div className="bg-white w-full">
-          <div className="max-w-screen-xl pt-16 pb-4 mx-auto">
+        <div className="bg-beige w-full">
+          <div className="max-w-screen-xl pt-16 pb-4 mx-auto px-4">
             <div className="flex flex-row justify-center">
               <div className="basis-1/5">
                 <h3 className="py-4 font-bold text-xl hover:underline cursor-pointer">
