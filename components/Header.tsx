@@ -13,6 +13,7 @@ const Header = () => {
   return (
     <header className="flex fixed top-0 inset-x-0 justify-between items-center bg-white px-8 py-2 z-10">
       <HiOutlineMenu size="2em" className="cursor-pointer md:hidden" />
+
       <ul className="hidden md:flex gap-4">
         {navLinks.map((navLink) => (
           <li key={navLink}>
