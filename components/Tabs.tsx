@@ -102,9 +102,9 @@ const Tabs = (): JSX.Element => {
         Our Best-Selling Gifts
       </h2>
 
-      <div className="max-w-screen-xl mx-auto space-y-8 px-4">
+      <div className="max-w-screen-xl mx-auto space-y-8 md:px-4">
         {/* TAB LIST */}
-        <div className="flex justify-around border-b-2 text-2xl">
+        <div className="flex justify-around border-b-2 md:text-2xl">
           {tabList.map((tab, index) => (
             <button
               key={`${tab}-${index}`}
@@ -147,7 +147,9 @@ const Tabs = (): JSX.Element => {
               slidesPerView: SWIPER_SMALL_SLIDES_PER_VIEW,
             },
           }}
-          navigation={true}
+          navigation={{
+            disabledClass: "opacity-0 cursor-auto pointer-events-none",
+          }}
           modules={[Navigation]}
           onSlideChange={(swiper) => {
             setSelectedIndex(
@@ -163,7 +165,7 @@ const Tabs = (): JSX.Element => {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          className="md:hidden p-1"
+          className="md:hidden py-1 px-8"
         >
           {tabItems.map((tabItem, index) => (
             <SwiperSlide className="h-auto" key={`${tabItem.name}-${index}`}>

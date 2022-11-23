@@ -21,23 +21,17 @@ const Promo_Hero = ({
   button2,
 }: IPromoHero): JSX.Element => {
   return (
-    <div className="flex flex-col">
-      <div className="py-4">
-        {/* 
+    <div className="flex flex-col gap-4">
+      {/* 
          <Image src={image} alt="bench" width={width} height={height} />
         */}
 
-        <img src={image} alt="bench" width={width} height={height} />
-      </div>
+      <img src={image} alt="bench" width={width} height={height} />
 
-      <div className="mx-auto p-4">
-        <div className="p-4 flex justify-center font-bold text-4xl">
-          {title}
-        </div>
-        <div className="p-4 flex justify-center text-xl text-center w-[48rem]">
-          {subtitle}
-        </div>
-        <div className="flex gap-10 p-4 justify-center">
+      <div className="flex flex-col text-center gap-4 mx-auto px-6">
+        <h2 className="font-bold text-2xl md:text-4xl">{title}</h2>
+        <p className="md:text-xl text-center">{subtitle}</p>
+        <div className="flex gap-10 justify-center">
           <Button>{button1}</Button>
           <Button>{button2}</Button>
         </div>

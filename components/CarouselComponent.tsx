@@ -61,20 +61,26 @@ interface ICarouselCompnent {
 
 const CarouselComponent = ({ title }: ICarouselCompnent) => {
   return (
-    <div className="space-y-10 py-4">
-      <div className="max-w-xl mx-auto">
-        <p className="font-bold text-3xl ">{title}</p>
+    <div className="space-y-6 py-4">
+      <div className="max-w-xl mx-auto px-6">
+        <h2 className="font-bold text-2xl xl md:text-4xl">{title}</h2>
       </div>
       <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
+        slidesPerView={1}
+        spaceBetween={15}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          768: { slidesPerView: 4 },
+        }}
         centeredSlides={true}
-        navigation={true}
+        navigation={{
+          disabledClass: "opacity-0 cursor-auto pointer-events-none",
+        }}
         modules={[Navigation]}
-        className="mySwiper"
+        className="px-8"
       >
         {carouselContent.map((item, index) => (
-          <SwiperSlide key={`${item.name}-${index}`}>
+          <SwiperSlide key={`${item.name}-${index}`} className="h-auto">
             <CarouselCard
               image={item.image}
               name={item.name}

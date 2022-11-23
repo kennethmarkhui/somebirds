@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="flex flex-col gap-8">{children}</main>
       <Footer />
     </>
   );
