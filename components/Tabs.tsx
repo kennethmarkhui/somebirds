@@ -187,14 +187,14 @@ const TabCard = ({
       <div className="w-full relative">
         <div className="overflow-hidden relative pb-[100%]">
           <img
-            src="http://placekitten.com/g/500/300"
+            src="https://placekitten.com/g/500/300"
             alt="a"
             className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 duration-300"
           />
         </div>
         {overlay && (
           <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-black/50 duration-300">
-            <Button>SHOP NOW</Button>
+            <Button variant="fill">SHOP NOW</Button>
           </div>
         )}
       </div>

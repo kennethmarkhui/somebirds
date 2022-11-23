@@ -16,15 +16,17 @@ const ButtonImage = forwardRef<HTMLButtonElement, IButtonImage>(function Button(
       ref={ref}
       className={`${className ?? ""}${
         variant === "hero"
-          ? " w-72 h-20 border-black  bg-hero-pattern text-white font-bold hover:underline"
+          ? " bg-hero-pattern"
           : variant === "banana"
-          ? "w-72 h-20 border-black  bg-banana-pattern text-white font-bold hover:underline"
+          ? " bg-banana-pattern"
           : variant === "space"
-          ? " w-72 h-20 border-black  bg-space-pattern text-white font-bold hover:underline"
+          ? " bg-space-pattern"
           : variant === "jungle"
-          ? "w-72 h-20 border-black  bg-jungle-pattern text-white font-bold hover:underline"
-          : "w-72 h-20 border-black  bg-car-pattern text-white font-bold hover:underline"
-      }${fullWidth && " w-full"} py-3 px-4 rounded`}
+          ? " bg-jungle-pattern"
+          : " bg-car-pattern"
+      }${
+        fullWidth ? " w-full" : ""
+      } w-72 h-20 border-black py-3 px-4 rounded font-bold hover:underline text-white`}
       {...rest}
     >
       {children}
