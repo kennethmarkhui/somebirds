@@ -6,7 +6,6 @@ import {
 import { request as graphqlRequest } from "graphql-request";
 
 import CarouselComponent from "../components/CarouselComponent";
-import Button from "../components/Button";
 import Hero from "../components/Hero";
 import SignUpModule from "../components/SignUpModule";
 import PromoHero, { IPromoHero } from "../components/PromoHero";
@@ -100,7 +99,7 @@ export default function Home({
       {products.map((product) => (
         <div key={product.id}>
           <ShopifyImage
-            data={product.variants.nodes[0].image ?? {}}
+            data={product.featuredImage ?? {}}
             width={250}
             loading="eager"
             className="h-80"
@@ -148,16 +147,11 @@ const query = graphql(`
         title
         publishedAt
         handle
-        variants(first: 1) {
-          nodes {
-            id
-            image {
-              url
-              altText
-              width
-              height
-            }
-          }
+        featuredImage {
+          url
+          altText
+          width
+          height
         }
       }
     }
