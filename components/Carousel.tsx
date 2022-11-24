@@ -1,8 +1,8 @@
-import CarouselCard, { ICard } from "./CarouselCard";
+import CarouselCard, { CarouselCardProps } from "./CarouselCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 
-const carouselContent: ICard[] = [
+const carouselContent: CarouselCardProps[] = [
   {
     name: "Women's Wool Runner",
     description: "Limited Edition Color, Buoyant Mint",
@@ -55,11 +55,11 @@ const carouselContent: ICard[] = [
   },
 ];
 
-interface ICarouselCompnent {
+interface CarouselProps {
   title: string;
 }
 
-const CarouselComponent = ({ title }: ICarouselCompnent) => {
+const Carousel = ({ title }: CarouselProps) => {
   return (
     <div className="space-y-6 py-4">
       <div className="max-w-xl mx-auto px-6">
@@ -80,7 +80,10 @@ const CarouselComponent = ({ title }: ICarouselCompnent) => {
         className="px-8"
       >
         {carouselContent.map((item, index) => (
-          <SwiperSlide key={`${item.name}-${index}`} className="h-auto">
+          <SwiperSlide
+            key={`${item.name}-${index}`}
+            className="h-auto max-w-md"
+          >
             <CarouselCard
               image={item.image}
               name={item.name}
@@ -93,4 +96,4 @@ const CarouselComponent = ({ title }: ICarouselCompnent) => {
   );
 };
 
-export default CarouselComponent;
+export default Carousel;

@@ -5,7 +5,7 @@ import {
 } from "@shopify/hydrogen-react";
 import { request as graphqlRequest } from "graphql-request";
 
-import CarouselComponent from "../components/CarouselComponent";
+import Carousel from "../components/Carousel";
 import Hero from "../components/Hero";
 import SignUpModule from "../components/SignUpModule";
 import PromoHero, { IPromoHero } from "../components/PromoHero";
@@ -71,7 +71,7 @@ export default function Home({
         button1={homePromoHeroContent.button1}
         button2={homePromoHeroContent.button2}
       />
-      <CarouselComponent title="New Arrivals" />
+      <Carousel title="New Arrivals" />
       <PromoHero
         image={homeSecondPromoHeroContent.image}
         width={homeSecondPromoHeroContent.width}
@@ -81,7 +81,7 @@ export default function Home({
         button1={homeSecondPromoHeroContent.button1}
         button2={homeSecondPromoHeroContent.button2}
       />
-      <CarouselComponent title="Shop The Collections" />
+      <Carousel title="Shop The Collections" />
       <PromoHero
         image={homeThirdPromoHeroContent.image}
         width={homeThirdPromoHeroContent.width}
@@ -91,7 +91,7 @@ export default function Home({
         button1={homeThirdPromoHeroContent.button1}
         button2={homeThirdPromoHeroContent.button2}
       />
-      <CarouselComponent title="Stories" />
+      <Carousel title="Stories" />
 
       {collections.map((collection) => (
         <div key={collection.id}>{collection.title}</div>

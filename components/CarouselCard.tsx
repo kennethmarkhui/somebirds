@@ -1,13 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-export interface ICard {
+export interface CarouselCardProps {
   image: string;
   name: string;
   description: string;
 }
 
-const CarouselCard = ({ image, name, description }: ICard): JSX.Element => {
+const CarouselCard = ({
+  image,
+  name,
+  description,
+}: CarouselCardProps): JSX.Element => {
   return (
-    <div className="group w-full h-full shadow-md flex flex-col bg-slate-50 max-w-md">
+    <div className="group w-full h-full shadow-md flex flex-col bg-slate-50">
       <div className="overflow-hidden">
         <img
           className="object-cover group-hover:scale-105 duration-300"
