@@ -78,7 +78,12 @@ const Header = () => {
             stores
           </Link>
           <HiOutlineUser size="2em" className="cursor-pointer" />
-          <HiOutlineQuestionMarkCircle size="2em" className="cursor-pointer" />
+          <Link href="/help">
+            <HiOutlineQuestionMarkCircle
+              size="2em"
+              className="cursor-pointer"
+            />
+          </Link>
         </div>
         <HiSearch size="2em" className="cursor-pointer md:hidden" />
         <HiOutlineShoppingCart size="2em" className="cursor-pointer" />

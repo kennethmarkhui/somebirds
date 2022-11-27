@@ -1,127 +1,149 @@
+interface IQuestion {
+  question: string;
+  answer: string;
+}
+
+interface IFAQ {
+  title: string;
+  questions: IQuestion[];
+}
+
 const contact = [
-  "Send us a text: 1-814-251-9966",
-  "Give us a call: 1-888-963-8944",
+  "Send us a text: 0-123-456-7890",
+  "Give us a call: 0-123-456-7891",
   "Monday - Wednesday 5AM - 3:30PM PST",
   "Thursday - CLOSED",
   "Friday - 5am - 5pm PST",
   "Saturday - Sunday 5AM - 5PM PST",
 ];
 
-const Product = [
-  "Do Somebirds run true to size?",
-  "Will my shoes stretch?",
-  "Are Somebirds good for flat feet?",
-  "Are Somebirds waterproof?",
-  "Can you wash Somebirds insole?",
-  "Are Somebirds washable?",
-];
-const Orders = [
-  "Do you offer gift wrap?",
-  "How are you keeping distribution centers safe?",
-  "Can I expedite my order?",
-  "How do you ship?",
-  "What if I want to cancel or change my order?",
-];
-const Company = [
-  "What is your commitment to sustainability?",
-  "Where are Somebirds products made?",
-  "How do you ensure fair and safe working conditions at factories?",
-  "Any updates with the Somebirds and adidas collaboration?",
-];
-const Return = [
-  "Can I return or exchange an instore purchase online?",
-  "How do I make a gift exchange?",
-  "What is Somebirds' return policy?",
-];
-const Payment = [
-  "When can I expect my refund?",
-  "Does Somebirds offer discount codes or coupons?",
-  "How do I send a gift card?",
+const faqs: IFAQ[] = [
+  {
+    title: "PRODUCT & FIT",
+    questions: [
+      { question: "Do Somebirds run true to size?", answer: "" },
+      {
+        question: "Will my shoes stretch?",
+        answer: "",
+      },
+      {
+        question: "Are Somebirds good for flat feet?",
+        answer: "",
+      },
+      {
+        question: "Are Somebirds waterproof?",
+        answer: "",
+      },
+      {
+        question: "Can you wash Somebirds insole?",
+        answer: "",
+      },
+      {
+        question: "Are Somebirds washable?",
+        answer: "",
+      },
+    ],
+  },
+  {
+    title: "RETURNS & EXCHANGE",
+    questions: [
+      {
+        question: "Can I return or exchange an instore purchase online?",
+        answer: "",
+      },
+      { question: "How do I make a gift exchange?", answer: "" },
+      { question: "What is Somebirds' return policy?", answer: "" },
+    ],
+  },
+  {
+    title: "ORDERS, SHIPPING & TRACKING",
+    questions: [
+      {
+        question: "Do you offer gift wrap?",
+        answer: "",
+      },
+      {
+        question: "How are you keeping distribution centers safe?",
+        answer: "",
+      },
+      { question: "Can I expedite my order?", answer: "" },
+      { question: "How do you ship?", answer: "" },
+      { question: "What if I want to cancel or change my order?", answer: "" },
+    ],
+  },
+  {
+    title: "PAYMENTS & REFUNDS",
+    questions: [
+      { question: "When can I expect my refund?", answer: "" },
+      {
+        question: "Does Somebirds offer discount codes or coupons?",
+        answer: "",
+      },
+      { question: "How do I send a gift card?", answer: "" },
+    ],
+  },
+  {
+    title: "COMPANY",
+    questions: [
+      { question: "What is your commitment to sustainability?", answer: "" },
+      { question: "Where are Somebirds products made?", answer: "" },
+      {
+        question:
+          "How do you ensure fair and safe working conditions at factories?",
+        answer: "",
+      },
+      {
+        question: "Any updates with the Somebirds and adidas collaboration?",
+        answer: "",
+      },
+    ],
+  },
 ];
 
-const help = () => {
+const Help = () => {
   return (
-    <div className="">
-      <div className="flex flex-col m-auto bg-[#212a2f] text-white py-60">
-        <h1 className="text-6xl p-8 mx-auto font-bold">How Can We Help?</h1>
-        <div className="mx-auto ">
-          {contact.map((item, index) => (
-            <p key={index} className="text-center">
-              {item}
-            </p>
-          ))}
-        </div>
-      </div>
-      <div>
-        <h1 className="font-bold text-3xl py-10 text-center">
-          Frequently Asked Questions
-        </h1>
-        <div className="grid grid-cols-2 gap-4">
+    <>
+      <section className="flex flex-col bg-[#212a2f] text-white h-[55vh]">
+        <div className="m-auto text-center space-y-6">
+          <h1 className="text-3xl md:text-5xl font-bold">How Can We Help?</h1>
           <div>
-            <div className="font-semibold py-4">PRODUCT & FIT</div>
-            <div>
-              {" "}
-              {Product.map((item, index) => (
-                <p key={index} className="py-2 hover:underline cursor-pointer">
-                  {item}
-                </p>
-              ))}
-            </div>
+            {contact.map((item, index) => (
+              <p key={index}>{item}</p>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div>
-            {" "}
-            {/* RETURNS AND EXCHANGE */}
-            <div className="font-semibold py-4">RETURNS & EXCHANGE</div>
-            <div>
-              {" "}
-              {Return.map((item, index) => (
-                <p key={index} className="py-2 hover:underline cursor-pointer">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold py-4">
-              ORDERS, SHIPPING & TRACKING
-            </div>
-            <div>
-              {" "}
-              {Orders.map((item, index) => (
-                <p key={index} className="py-2 hover:underline cursor-pointer">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div>
-            {" "}
-            {/* PAYMENTS AND REFUNDS */}
-            <div className="font-semibold py-4">PAYMENTS & REFUNDS</div>
-            <div>
-              {" "}
-              {Payment.map((item, index) => (
-                <p key={index} className="py-2 hover:underline cursor-pointer">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold py-4">COMPANY</div>
-            <div>
-              {" "}
-              {Company.map((item, index) => (
-                <p key={index} className="py-2 hover:underline cursor-pointer">
-                  {item}
-                </p>
+      <section className="max-w-7xl mx-auto">
+        <div className="max-w-[80vw] mx-auto flex flex-grow justify-center">
+          <div className="flex flex-col flex-auto gap-12">
+            <h2 className="font-bold text-2xl md:text-3xl text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="flex flex-wrap">
+              {faqs.map(({ title, questions }) => (
+                <div
+                  key={title}
+                  className="basis-full md:basis-1/2 flex-auto space-y-4 px-4 pb-10"
+                >
+                  <h3 className="font-semibold">{title}</h3>
+                  <ul className="space-y-4">
+                    {questions.map(({ question, answer }) => (
+                      <li
+                        key={question}
+                        className="hover:underline cursor-pointer"
+                      >
+                        {question}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
-export default help;
+export default Help;
