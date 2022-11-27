@@ -2,27 +2,31 @@ import Button from "../components/Button";
 const Rerun = () => {
   return (
     <>
-      <div className="flex flex-row gap-4">
-        <div className="basis-1/2">
-          <img src="http://placekitten.com/g/700/900"></img>
+      <div className="flex flex-row bg-beige py-8 place-content-center">
+        <div className="flex p-12">
+          <img src="http://placekitten.com/g/600/800"></img>
         </div>
-        <div className=" flex flex-col basis-1/2 mx-28 justify-start">
-          <div className="font-bold">SOMEBIRDS RERUN</div>
-          <div>A New Way To Get Old Favorites</div>
-          <div>
-            Allbirds ReRun is our new marketplace where you can shop slightly
-            imperfect and gently used products, extending their life and
-            lowering our impact on the planet.
-          </div>
-          <div>
-            A quick heads up: By visiting Allbirds ReRun, you will be leaving
-            allbirds.com and heading to a site owned and operated by Trove, our
-            third party partner. Trove manages all things ReRun, including your
-            order confirmation, shipping, potential returns/exchanges, and the
-            like.
-          </div>
-          <div>
-            <Button>START SHOPPING RERUN</Button>
+        <div className="flex">
+          <div className="flex-col my-auto max-w-2xl">
+            <div className="font-bold py-4 text-4xl">SOMEBIRDS RERUN</div>
+            <div className="font-bold py-4 text-3xl">
+              A New Way To Get Old Favorites
+            </div>
+            <div className="py-4 text-lg ">
+              Allbirds ReRun is our new marketplace where you can shop slightly
+              imperfect and gently used products, extending their life and
+              lowering our impact on the planet.
+            </div>
+            <div className="py-4 text-lg">
+              A quick heads up: By visiting Allbirds ReRun, you will be leaving
+              allbirds.com and heading to a site owned and operated by Trove,
+              our third party partner. Trove manages all things ReRun, including
+              your order confirmation, shipping, potential returns/exchanges,
+              and the like.
+            </div>
+            <div>
+              <Button>START SHOPPING RERUN</Button>
+            </div>
           </div>
         </div>
       </div>
