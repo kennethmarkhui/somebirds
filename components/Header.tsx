@@ -12,7 +12,7 @@ import ButtonImage from "./ButtonImage";
 
 const navLinks = ["men", "women", "kids"];
 
-const Shoes = [
+export const Shoes = [
   "Everyday Sneakers",
   "Running Shoes",
   "Slip-Ons",

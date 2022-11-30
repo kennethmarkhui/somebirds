@@ -13,7 +13,7 @@ const ItemCard = ({
 }: IItemCard): JSX.Element => {
   return (
     <div className="bg-beige max-w-xs">
-      <div className="pb-2">
+      <div className="pb-2 ">
         <img src="http://placekitten.com/g/400/400"></img>
       </div>
       <div className="">

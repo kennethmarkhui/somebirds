@@ -14,6 +14,7 @@ import { graphql } from "../gql/gql";
 import type { IndexQueryQuery } from "../gql/graphql";
 import { shopifyClient } from "../lib/shopify";
 import ItemCard from "../components/ItemCard";
+import Collections from "../components/Collections";
 
 const homePromoHeroContent: IPromoHero = {
   image: "bench_itzy.jpg",
@@ -78,6 +79,7 @@ export default function Home({
         description="description"
         price="price"
       ></ItemCard>
+      <Collections></Collections>
       <Carousel title="New Arrivals" />
       <PromoHero
         image={homeSecondPromoHeroContent.image}
