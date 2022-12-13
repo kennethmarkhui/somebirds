@@ -1,7 +1,7 @@
 import { Shoes } from "./Header";
-const Collections = () => {
+const CollectionFilter = () => {
   return (
-    <div>
+    <div className="p-16">
       <div>
         <h3 className="py-4 font-bold text-xl hover:underline cursor-pointer">
           Running Shoes
@@ -12,8 +12,8 @@ const Collections = () => {
           </p>
         ))}
       </div>
-      <h3 className="font-bold">Filter By:</h3>
-      <h3 className="font-bold">BEST FOR</h3>
+      <h3 className="font-bold pt-4">Filter By:</h3>
+      <h3 className="font-bold pt-4">BEST FOR</h3>
       <div className="">
         <input type="checkbox" value="" className="cursor-pointer"></input>
         <label> Running</label>
@@ -34,7 +34,7 @@ const Collections = () => {
         <input type="checkbox" value="" className="cursor-pointer"></input>
         <label> Warm Weather</label>
       </div>
-      <h3 className="font-bold">MATERIAL</h3>
+      <h3 className="font-bold pt-4">MATERIAL</h3>
       <div className="">
         <input type="checkbox" value="" className="cursor-pointer "></input>
         <label> Light & Breezy Tree</label>
@@ -43,7 +43,7 @@ const Collections = () => {
         <input type="checkbox" value="" className="cursor-pointer"></input>
         <label> Soft & Cozy Wool</label>
       </div>
-      <h3 className="font-bold">HUE</h3>
+      <h3 className="font-bold pt-4">HUE</h3>
       <div className="">
         <input
           type="checkbox"
@@ -111,4 +111,4 @@ const Collections = () => {
     </div>
   );
 };
-export default Collections;
+export default CollectionFilter;

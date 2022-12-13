@@ -53,7 +53,7 @@ const Header = () => {
     setIsOpen(false);
   };
   return (
-    <header className="flex fixed top-0 inset-x-0 justify-between items-center bg-white px-8 py-2 z-50">
+    <header className="flex fixed top-0 inset-x-0 justify-between items-center bg-white px-8 py-2 z-50 shadow-md">
       <HiOutlineMenu size="2em" className="cursor-pointer md:hidden" />
       {/* TABLIST */}
       <ul className="hidden md:flex gap-4">
